@@ -27,7 +27,7 @@ def start_server():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     
     # Bind the socket to a specific IP address and port
-    server_address = ('10.0.1.12', 9999)
+    server_address = (socket.gethostbyname_ex(socket.gethostname())[-1][-1], 9999)
     server_socket.bind(server_address)
     
     # Listen for incoming connections
